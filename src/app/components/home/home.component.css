@@ -1,0 +1,49 @@
+.main-container {
+    background-color:  white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-sidenav-container {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+mat-sidenav {
+    min-height: 565px;
+    width: 16%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-sidenav a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 6px;
+    text-decoration: none;
+    color: grey;
+    letter-spacing: .5px;
+    transition: all ease-in-out .5s;
+}
+
+mat-sidenav a:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+    color: black;
+    font-weight: 400;
+}
+
+mat-sidenav-content {
+    min-height: 565px;
+    padding: 6px;
+    width: 100%;
+}
