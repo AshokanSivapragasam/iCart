@@ -1,18 +1,12 @@
-<app-layout-header [sideNav]="sideNav" (isUseridentifiedChange)="displaySideBar($event)"></app-layout-header>
-<app-layout-fly-menu></app-layout-fly-menu>
-<app-layout-offers></app-layout-offers>
-<!--<section class="main-container">
-  <mat-sidenav-container>-->
-    <!--<mat-sidenav #sideNav (click)="sideNav.toggle()" mode="side" [opened]="true">-->
-    <!--<mat-sidenav #sideNav mode="side" [opened]="isUseridentified">
-      <a routerLink="/elements">List Elements</a>
-      <a routerLink="/tracker">Tracker</a>
-      <a routerLink="/wishlist">Wishlist</a>
-      <a routerLink="/cart">Cart</a>
-    </mat-sidenav>
+<app-layout-header></app-layout-header>
+<app-layout-twolayer-fly-menu></app-layout-twolayer-fly-menu>
+<!--<app-layout-fly-menu></app-layout-fly-menu>-->
+<section class="main-container">
+  <mat-sidenav-container>
     <mat-sidenav-content>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
-</section>-->
+</section>
+<!--<app-thirukkural></app-thirukkural>-->
 <app-layout-footer></app-layout-footer>

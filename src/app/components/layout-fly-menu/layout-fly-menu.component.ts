@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 
 @Component({
   selector: 'app-layout-fly-menu',
@@ -11,5 +11,4 @@ export class LayoutFlyMenuComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

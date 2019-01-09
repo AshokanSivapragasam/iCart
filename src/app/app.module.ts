@@ -1,7 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -35,7 +37,8 @@ import {
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatIconRegistry
  } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -55,6 +58,17 @@ import { UpdateElementComponent } from './components/elements/update-element/upd
 import { DeleteElementComponent } from './components/elements/delete-element/delete-element.component';
 import { LayoutOffersComponent } from './components/layout-offers/layout-offers.component';
 import { LayoutFlyMenuComponent } from './components/layout-fly-menu/layout-fly-menu.component';
+import { LayoutTwolayerFlyMenuComponent } from './components/layout-twolayer-fly-menu/layout-twolayer-fly-menu.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ListFramesComponent } from './components/frames/list-frames/list-frames.component';
+import { ThirukkuralComponent } from './components/thirukkural/thirukkural.component';
+import { ThirukkuralService } from './services/thirukkural/thiikkural.service';
+import { ListRecommendationsComponent } from './components/recommendations/list-recommendations/list-recommendations.component';
+import { SeasonalBanner01Component } from './components/advertisements/seasonal-banner01/seasonal-banner01.component';
+import { SeasonalBanner02Component } from './components/advertisements/seasonal-banner02/seasonal-banner02.component';
+import { SeasonalBanner03Component } from './components/advertisements/seasonal-banner03/seasonal-banner03.component';
+import { DisplayFrameComponent } from './components/frames/display-frame/display-frame.component';
+import { InMemoryDataService } from './services/in-memory-data-frames.service';
 
 @NgModule({
   exports: [
@@ -112,17 +126,33 @@ export class CustomMaterialModule { }
     WishlistComponent,
     ListCartItemsComponent,
     LayoutOffersComponent,
-    LayoutFlyMenuComponent
+    LayoutFlyMenuComponent,
+    LayoutTwolayerFlyMenuComponent,
+    ListFramesComponent,
+    DisplayFrameComponent,
+    ThirukkuralComponent,
+    ListRecommendationsComponent,
+    SeasonalBanner01Component,
+    SeasonalBanner02Component,
+    SeasonalBanner03Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true}),
     NoopAnimationsModule,
     AppRoutingModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    Ng2CarouselamosModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, ThirukkuralService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer) {
+    matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('~/../assets/mdi.svg'));
+  }
+}

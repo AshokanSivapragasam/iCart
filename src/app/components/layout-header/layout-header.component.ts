@@ -34,6 +34,7 @@ export class LayoutHeaderComponent implements OnInit {
     localStorage.removeItem('user-identity');
     this.isUseridentified = false;
     this.isUseridentifiedChange.emit(this.isUseridentified);
+    this.router.navigate(['/login']);
   }
 
   acquireTracker(): void {

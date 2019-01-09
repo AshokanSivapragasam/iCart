@@ -3,7 +3,7 @@
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: FuturaStd-Book,Helvetica Neue,Helvetica,Arial,sans-serif; /*'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
     font-size: 14px;
     font-weight: 400;
 }

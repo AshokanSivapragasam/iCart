@@ -9,7 +9,8 @@ import { LoginService } from '../../services/login/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private loginForm: FormGroup;
+  hide = false;
+  loginForm: FormGroup;
 
   constructor(private router: Router,
               private formBuilder: FormBuilder,
@@ -37,5 +38,10 @@ export class LoginComponent implements OnInit {
       localStorage.removeItem('user-identity');
       this.router.navigate(['/login']);
     }
+  }
+
+  register(): void {
+    console.log('clicked');
+    event.preventDefault();
   }
 }

@@ -1,10 +1,11 @@
-<mat-form-field class="filter-container">
-  <input matInput type="search" (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-</mat-form-field>
+<section class="whole-container">
+  <mat-form-field class="filter-container">
+    <input matInput type="search" (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
 
-<button mat-raised-button (click)="addElement()" style="margin-left: 30px;">Add new element</button>
+  <button mat-raised-button (click)="addElement()" style="margin-left: 30px;">Add new element</button>
 
-<table mat-table [dataSource]="dataSource" class="table-container">
+  <table mat-table [dataSource]="dataSource" class="table-container">
     <!-- Checkbox Column -->
     <ng-container matColumnDef="select" *ngIf="shouldMultiSelectEnabled">
       <th mat-header-cell *matHeaderCellDef>
@@ -58,4 +59,4 @@
         (click)="selection.toggle(row)">
     </tr>
   </table>
-  
+</section>
