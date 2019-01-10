@@ -1,0 +1,21 @@
+<section class="frame-container" *ngIf="frame">
+    <span class="left-segment">
+        <section class="image-container">
+            <img [src]="frame.framesIn360View[currentFrameIn360ViewIndex].imageUri" [alt]="frame.framesIn360View[currentFrameIn360ViewIndex].imageUri">
+        </section>
+        <section class="thumbnails-container">
+            <span class="lhs">
+                
+            </span>
+            <span class="rhs">
+                <section *ngFor="let frameIn360View of frame.framesIn360View; let frameIn360ViewIndex = index" (mouseover)="zoomThisFrame(frameIn360ViewIndex)">
+                    <img [src]="frameIn360View.thumbnailUri" [alt]="frameIn360View.name">
+                </section>
+            </span>
+        </section>
+    </span>
+    <span class="right-segment">
+        <section>
+        </section>
+    </span>
+</section>
