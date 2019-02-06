@@ -186,10 +186,6 @@
     color: black;
 }
 
-ul>li {
-    padding-top: 1px;
-}
-
 li {
     list-style: none;
 }

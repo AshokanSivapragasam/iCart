@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FramesService } from '../../../services/frames/frames.service';
 import { Frame } from '../../../models/frame/frame.models';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-display-frame',
@@ -15,6 +16,8 @@ export class DisplayFrameComponent implements OnInit {
   frameId: number;
   frame: Frame;
   currentFrameIn360ViewIndex = 0;
+  @ViewChild('realImage') realImage: ElementRef;
+  @ViewChild('zoomLens') zoomLens: ElementRef;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,

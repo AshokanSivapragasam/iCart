@@ -1,8 +1,9 @@
 <section class="frame-container" *ngIf="frame">
     <span class="left-segment">
-        <section class="image-container">
+        <section class="image-container" #realImage (mouseover)="getCursorPos($event)">
             <img [src]="frame.framesIn360View[currentFrameIn360ViewIndex].imageUri" [alt]="frame.framesIn360View[currentFrameIn360ViewIndex].imageUri">
         </section>
+        
         <section class="thumbnails-container">
             <span class="lhs">
                 
@@ -15,7 +16,8 @@
         </section>
     </span>
     <span class="right-segment">
-        <section>
+        <section class="zoom-lens">
+            <img [src]="frame.framesIn360View[currentFrameIn360ViewIndex].imageUri" [alt]="frame.framesIn360View[currentFrameIn360ViewIndex].imageUri">
         </section>
     </span>
 </section>

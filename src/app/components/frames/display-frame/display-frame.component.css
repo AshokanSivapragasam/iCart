@@ -13,6 +13,19 @@
     align-content: center;
 }
 
+.zoom-lens {
+    width: 200px;
+    height:200px;
+    background-color: lightgrey;
+    overflow: hidden;
+}
+
+.zoom-lens>img {
+    clip-path: inset(-100px -200px 200px 10px);
+    width: 400px;
+    height:400px;
+}
+
 .right-segment {
     width: 32%;
     display: flex;
